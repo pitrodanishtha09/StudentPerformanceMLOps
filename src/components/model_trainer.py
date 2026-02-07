@@ -38,7 +38,7 @@ class ModelTrainer:
                 test_array[:,:-1],
                 test_array[:,-1]
             )
-            models = {
+            models = { ## models and hyperparameters are defined in utils.py file.
                 "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),
