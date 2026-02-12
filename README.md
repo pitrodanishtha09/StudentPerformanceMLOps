@@ -73,9 +73,13 @@ Loaded dynamically in Flask prediction pipeline
 
 📈 Model Performance (Test Data)
 Metric	Score
+
 R² Score	0.8804
+
 MAE	4.21
+
 RMSE	5.39
+
 🔍 Interpretation
 
 Model explains 88% of variance in student Maths scores.
@@ -87,10 +91,13 @@ Most predictions fall within ±5–6 marks.
 This indicates strong generalization on unseen data.
 
 🏗️ System Architecture
+
 🔁 Application Flow
+
 User → Flask Web App → Prediction Pipeline → Serialized Model → Response
 
 ☁️ Deployment Flow
+
 GitHub
    ↓
 AWS CodePipeline (CI/CD)
@@ -100,6 +107,7 @@ Elastic Beanstalk
 EC2 + Nginx + Gunicorn
 
 ⚙️ Tech Stack
+
 🧩 Backend
 
 Python
@@ -153,6 +161,7 @@ Application redeploys automatically
 ✔ Production-style workflow
 
 📂 Project Structure
+
 MLPROJECT/
 │
 ├── application.py          # Flask entry point
@@ -170,6 +179,7 @@ MLPROJECT/
 └── README.md
 
 🧪 Run Locally
+
 git clone <repo-url>
 cd MLPROJECT
 
