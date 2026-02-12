@@ -46,21 +46,24 @@ User → Flask App → Prediction Pipeline → Model (.pkl)
 ### Deployment Flow
 GitHub → CodePipeline → Elastic Beanstalk → EC2
 
----
-
 ## 🚀 Run Locally
 
 ```bash
-git clone <repo-url>
+git clone <https://github.com/pitrodanishtha09/StudentPerformanceMLOps.git>
 cd MLPROJECT
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 python application.py
-Open:
+```
+
+Open in browser:  
 http://127.0.0.1:5000/
 
-👩‍💻 Author
+---
 
-Nishtha Pitroda
+## 👩‍💻 Author
+
+**Nishtha Pitroda**  
 Machine Learning & AI Enthusiast
+
