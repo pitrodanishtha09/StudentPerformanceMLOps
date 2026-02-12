@@ -49,12 +49,15 @@ GitHub → CodePipeline → Elastic Beanstalk → EC2
 ## 🚀 Run Locally
 
 ```bash
-git clone <https://github.com/pitrodanishtha09/StudentPerformanceMLOps.git>
-cd MLPROJECT
-python -m venv venv
-venv\Scripts\activate
+git clone https://github.com/pitrodanishtha09/StudentPerformanceMLOps.git
+cd student-performance-mlops
+
+conda create -p ./venv python=3.9
+conda activate ./venv
+
 pip install -r requirements.txt
 python application.py
+
 ```
 
 Open in browser:  
