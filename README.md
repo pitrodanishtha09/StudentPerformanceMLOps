@@ -3,7 +3,7 @@
 
 An end-to-end machine learning system that predicts a student’s **Maths score** using academic and demographic inputs.
 
-Deployed on **AWS Elastic Beanstalk** with automated **CI/CD via AWS CodePipeline**.
+Deployed on **Render**
 
 ---
 
