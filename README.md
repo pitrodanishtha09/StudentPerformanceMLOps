@@ -9,7 +9,9 @@ Deployed on **AWS Elastic Beanstalk** with automated **CI/CD via AWS CodePipelin
 
 ## 🔗 Live Demo
 
-👉 **[Try the Application](http://studentperformance-env.eba-bcbjf3bp.eu-north-1.elasticbeanstalk.com/)**
+👉 https://studentperformancemlops.onrender.com
+
+Use the form to enter student details and predict the maths score using the trained ML model.
 
 ---
 
