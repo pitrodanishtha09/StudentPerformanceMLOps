@@ -56,10 +56,17 @@ def predict():
         )
 
     except Exception as e:
-        logging.error(f"Prediction error: {str(e)}")
-        return render_template(
-            "home.html",
-            results="Something went wrong. Please try again."
+          import traceback
+
+          print("===== ERROR START =====")
+          print(e)
+          traceback.print_exc()
+          print("===== ERROR END =====")
+
+          return render_template(
+         "home.html",
+          results="Something went wrong. Please try again."
+    )
         )
 
 
