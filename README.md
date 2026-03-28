@@ -9,7 +9,7 @@ Deployed on **Render**
 
 ## 🔗 Live Demo
 
-👉 https://studentperformancemlops.onrender.com
+👉https://studentperformancemlops.onrender.com
 Use the form to enter student details and predict the maths score using the trained ML model.
 
 ⚠️ Note: The app is hosted on Render (free tier), so it may take 30–60 seconds to load on first open due to server cold start.
