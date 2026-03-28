@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 import logging
+import traceback
 
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
@@ -11,26 +12,28 @@ app = application
 logging.basicConfig(level=logging.INFO)
 
 
-# Home route (form page)
+# Home route
 @app.route("/")
 def home():
     return render_template("home.html")
 
 
-# Prediction route (POST only)
+# Prediction route
 @app.route("/predict", methods=["POST"])
 def predict():
     try:
-        # Collect and validate inputs
+        # Collect inputs
         reading_score = float(request.form.get("reading_score"))
         writing_score = float(request.form.get("writing_score"))
 
+        # Validate inputs
         if not (0 <= reading_score <= 100 and 0 <= writing_score <= 100):
             return render_template(
                 "home.html",
                 results="Scores must be between 0 and 100"
             )
 
+        # Create data object
         data = CustomData(
             gender=request.form.get("gender"),
             race_ethnicity=request.form.get("race_ethnicity"),
@@ -43,6 +46,7 @@ def predict():
 
         pred_df = data.get_data_as_data_frame()
 
+        # Prediction
         predict_pipeline = PredictPipeline()
         results = predict_pipeline.predict(pred_df)
 
@@ -56,20 +60,20 @@ def predict():
         )
 
     except Exception as e:
-        import traceback
+        # Log full error (Render logs)
+        logging.error("===== ERROR START =====")
+        logging.error(str(e))
+        logging.error(traceback.format_exc())
+        logging.error("===== ERROR END =====")
 
-        print("===== ERROR START =====")
-        print(e)
-        traceback.print_exc()
-        print("===== ERROR END =====")
-
+        # Show actual error on UI (temporary for debugging)
         return render_template(
             "home.html",
-            results="Something went wrong. Please try again."
+            results=f"Error: {str(e)}"
         )
 
 
-# Optional health check endpoint (recommended)
+# Health check route
 @app.route("/health")
 def health():
     return {"status": "healthy"}, 200
